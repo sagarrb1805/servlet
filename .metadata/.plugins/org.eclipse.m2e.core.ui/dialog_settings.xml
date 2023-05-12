@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\Users\Administrator\Documents"/>
 			<item value="C:\Users\Administrator\eclipse-workspace\DemoSample\src\MainClass.java"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -26,10 +27,16 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="springmvcsample.springmvcsample"/>
+			<item value="springSample.springSample"/>
 		</list>
 		<list key="groupId">
+			<item value="springmvcsample"/>
+			<item value="springSample"/>
 		</list>
 		<list key="artifactId">
+			<item value="springmvcsample"/>
+			<item value="springSample"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -61,5 +68,9 @@
 		<list key="version">
 			<item value="0.0.1-SNAPSHOT"/>
 		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
 	</section>
 </section>
