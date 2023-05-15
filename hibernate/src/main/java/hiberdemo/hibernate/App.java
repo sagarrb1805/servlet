@@ -16,18 +16,20 @@ public class App
     public static void main( String[] args )
     {
     	
-    	Employee em = new Employee();
-    	em.setId(112);
-    	em.setName("emp 1");
-    	em.setCountry("India");
+//    	Employee em = new Employee();
+//    	em.setId(112);
+//    	em.setName("emp 1");
+//    	em.setCountry("India");
+//    	
+//    	Equipment equi = new Equipment();
+//    	equi.setEqui_id(1);
+//    	equi.setEqui_name("pixel 7A");
+//    	
+//    	em.setEqui(equi);
+//    	
+//    	System.out.println(em);
+    	Employee em = null; 
     	
-    	Equipment equi = new Equipment();
-    	equi.setEqui_id(1);
-    	equi.setEqui_name("pixel 7A");
-    	
-    	em.setEqui(equi);
-    	
-    	System.out.println(em);
     	Configuration config = new Configuration().configure().addAnnotatedClass(Employee.class).addAnnotatedClass(Equipment.class);
     	
     	SessionFactory factory = config.buildSessionFactory();
@@ -35,10 +37,20 @@ public class App
     	Session se = factory.openSession();
     	Transaction tx = se.beginTransaction();
     	
-    	se.save(em);
-    	se.save(equi);
+    	em = se.get(Employee.class, 112);
+    	System.out.println(em);
+    	se.close();
     	
-    	tx.commit();
+    	Session se1 = factory.openSession();
+    	
+    	em = se1.get(Employee.class, 112);
+    	System.out.println(em);
+    	se1.close();
+    	
+//    	se.save(em);
+//    	se.save(equi);
+    	
+//    	tx.commit();
     	
     	
     	
