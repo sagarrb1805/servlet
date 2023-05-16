@@ -37,20 +37,28 @@ public class App
     	Session se = factory.openSession();
     	Transaction tx = se.beginTransaction();
     	
-    	em = se.get(Employee.class, 112);
-    	System.out.println(em);
-    	se.close();
     	
-    	Session se1 = factory.openSession();
+    	for(int i=0;i<30;i++) { Employee e1 = new Employee(); e1.setId(i);
+		 e1.setCountry("IN "+i);
+		 e1.setName("Name " +i); 
+		 se.save(e1);
+    	}
     	
-    	em = se1.get(Employee.class, 112);
-    	System.out.println(em);
-    	se1.close();
+    	
+//    	em = se.get(Employee.class, 112);
+//    	System.out.println(em);
+//    	se.close();
+//    	
+//    	Session se1 = factory.openSession();
+//    	
+//    	em = se1.get(Employee.class, 112);
+//    	System.out.println(em);
+//    	se1.close();
     	
 //    	se.save(em);
 //    	se.save(equi);
     	
-//    	tx.commit();
+    	tx.commit();
     	
     	
     	
